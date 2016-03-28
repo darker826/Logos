@@ -2,7 +2,7 @@
 student member 
       <br>- Park si hyeon (PM & developer)
       <br>- Lee so min ( developer )
-      <br>- Choi jae wong ( developer )
+      <br>- Choi jae ung ( developer )
       <br>- Ham cho rom ( developer )
 
 #Description
