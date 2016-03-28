@@ -1,12 +1,12 @@
 #Team Logos
 student member 
-      - Park si hyeon (PM & developer)
-      - Lee so min ( developer )
-      - Choi jae wong ( developer )
-      - Ham cho rom ( developer )
+      <br>- Park si hyeon (PM & developer)
+      <br>- Lee so min ( developer )
+      <br>- Choi jae wong ( developer )
+      <br>- Ham cho rom ( developer )
 
 #Description
-Our software name is [Pre Hands].
+Our software name is [Pre Hands]. <br>
 Based on the needs of the user requestion, We propose a computer presentation system by using hand-motion recognition rules. 
 Presentation tool is limited to MS Power Point product.
 To identify hand motions of a presenter, face and hands region are extracted graphic algorithm and classifier by using web camera. 
