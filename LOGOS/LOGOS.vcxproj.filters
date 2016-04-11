@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Detect">
+      <UniqueIdentifier>{c40d2d4c-4947-4741-b652-7f0c787bcabd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Gesture">
+      <UniqueIdentifier>{ad0c8b4e-f348-484d-8835-175a49a7e17c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Matching">
+      <UniqueIdentifier>{2c2975b5-47d6-40c8-ba72-0ed084bb2a4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Main">
+      <UniqueIdentifier>{4a829c49-bf5d-401e-8042-68fdabd74199}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Exception">
+      <UniqueIdentifier>{4f66c68f-e09f-452a-a5a4-d8d3b18e6cac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Detect">
+      <UniqueIdentifier>{654f3fd5-3dc8-407f-8b30-8b985effed4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Gesture">
+      <UniqueIdentifier>{2a73f15d-81f5-4494-a0a0-2cbceb578c4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Matching">
+      <UniqueIdentifier>{5167896f-0f32-410d-9dca-04b647badd4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Main">
+      <UniqueIdentifier>{09bd1b36-ad33-4189-beb9-43ed2176ddd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Exception">
+      <UniqueIdentifier>{086ec34d-7162-4339-bf05-a6c0d506ec94}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CursorMotion.h">
+      <Filter>헤더 파일\Gesture</Filter>
+    </ClInclude>
+    <ClInclude Include="Motion.h">
+      <Filter>헤더 파일\Gesture</Filter>
+    </ClInclude>
+    <ClInclude Include="PPTMotion.h">
+      <Filter>헤더 파일\Gesture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ConsoleApplication1\RecordMotion.h">
+      <Filter>헤더 파일\Gesture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ConsoleApplication1\DetectHandler.h">
+      <Filter>헤더 파일\Detect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ConsoleApplication1\FaceDetector.h">
+      <Filter>헤더 파일\Detect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ConsoleApplication1\HandDetector.h">
+      <Filter>헤더 파일\Detect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ConsoleApplication1\NoiseCanceler.h">
+      <Filter>헤더 파일\Detect</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>헤더 파일\Matching</Filter>
+    </ClInclude>
+    <ClInclude Include="CursorController.h">
+      <Filter>헤더 파일\Matching</Filter>
+    </ClInclude>
+    <ClInclude Include="PPTController.h">
+      <Filter>헤더 파일\Matching</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordController.h">
+      <Filter>헤더 파일\Matching</Filter>
+    </ClInclude>
+    <ClInclude Include="DetectExp.h">
+      <Filter>헤더 파일\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadingExp.h">
+      <Filter>헤더 파일\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="GestureExp.h">
+      <Filter>헤더 파일\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchingExp.h">
+      <Filter>헤더 파일\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordExp.h">
+      <Filter>헤더 파일\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="Frame.h">
+      <Filter>헤더 파일\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>헤더 파일\Main</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\ConsoleApplication1\DetectHandler.cpp">
+      <Filter>소스 파일\Detect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ConsoleApplication1\FaceDetector.cpp">
+      <Filter>소스 파일\Detect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ConsoleApplication1\HandDetector.cpp">
+      <Filter>소스 파일\Detect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ConsoleApplication1\NoiseCanceler.cpp">
+      <Filter>소스 파일\Detect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ConsoleApplication1\RecordMotion.cpp">
+      <Filter>소스 파일\Gesture</Filter>
+    </ClCompile>
+    <ClCompile Include="CursorMotion.cpp">
+      <Filter>소스 파일\Gesture</Filter>
+    </ClCompile>
+    <ClCompile Include="Motion.cpp">
+      <Filter>소스 파일\Gesture</Filter>
+    </ClCompile>
+    <ClCompile Include="PPTMotion.cpp">
+      <Filter>소스 파일\Gesture</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>소스 파일\Matching</Filter>
+    </ClCompile>
+    <ClCompile Include="CursorController.cpp">
+      <Filter>소스 파일\Matching</Filter>
+    </ClCompile>
+    <ClCompile Include="PPTController.cpp">
+      <Filter>소스 파일\Matching</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordController.cpp">
+      <Filter>소스 파일\Matching</Filter>
+    </ClCompile>
+    <ClCompile Include="DetectExp.cpp">
+      <Filter>소스 파일\Exception</Filter>
+    </ClCompile>
+    <ClCompile Include="GestureExp.cpp">
+      <Filter>소스 파일\Exception</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingExp.cpp">
+      <Filter>소스 파일\Exception</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchingExp.cpp">
+      <Filter>소스 파일\Exception</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordExp.cpp">
+      <Filter>소스 파일\Exception</Filter>
+    </ClCompile>
+    <ClCompile Include="Frame.cpp">
+      <Filter>소스 파일\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>소스 파일\Main</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
