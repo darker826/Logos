@@ -20,6 +20,8 @@ using Microsoft.Kinect;
 using Coding4Fun.Kinect.Wpf;
 using PreHands.eventHandler;
 using System.Windows.Forms;
+using Microsoft.Samples.Kinect.WpfViewers;
+using Microsoft.Kinect.Toolkit.Interaction;
 
 namespace PreHands
 {
@@ -30,7 +32,7 @@ namespace PreHands
    
     public partial class MainWindow : Window
     {
-        
+        private InteractionStream _interactionStream;
         public MainWindow()
         {
             InitializeComponent();
@@ -76,6 +78,9 @@ namespace PreHands
             sensor.DepthStream.Enable(DepthImageFormat.Resolution640x480Fps30); 
             sensor.ColorStream.Enable(ColorImageFormat.RgbResolution640x480Fps30);
 
+            _interactionStream = new InteractionStream(sensor, new MDKinectInteractions());
+            _interactionStream.InteractionFrameReady += its_InteractionFrameReady;
+
             try
             {
                 sensor.Start();
@@ -114,11 +119,69 @@ namespace PreHands
 
             setCursor(first);
 
+            //interactionStream에 skeleton과 depth 등록
+            setInteraction(e);
+
         }
 
-        void setCursor(Skeleton first)
+        //interactionStream에 skeleton과 depth 등록
+        private void setInteraction(AllFramesReadyEventArgs e)
+        {
+            KinectSensor _sensor = kinectSensorChooser1.Kinect;
+
+            if (_sensor == null)
+            {
+                return;
+            }
+            using (SkeletonFrame skeletonFrame = e.OpenSkeletonFrame())
+            {
+
+                if (skeletonFrame == null)
+                    return;
+
+                try
+                {
+                    skeletonFrame.CopySkeletonDataTo(allSkeletons);
+                    var accelerometerReading = _sensor.AccelerometerGetCurrentReading();
+                    _interactionStream.ProcessSkeleton(allSkeletons, accelerometerReading, skeletonFrame.Timestamp);
+                }
+                catch (InvalidOperationException)
+                {
+                    // SkeletonFrame functions may throw when the sensor gets
+                    // into a bad state.  Ignore the frame in that case.
+                }
+            }
+            using (DepthImageFrame depthFrame = e.OpenDepthImageFrame())
+            {
+                if (depthFrame == null)
+                    return;
+
+                try
+                {
+                    _interactionStream.ProcessDepth(depthFrame.GetRawPixelData(), depthFrame.Timestamp);
+                }
+                catch (InvalidOperationException)
+                {
+                    // DepthFrame functions may throw when the sensor gets
+                    // into a bad state.  Ignore the frame in that case.
+                }
+            }
+        }
+
+        private void setCursor(Skeleton first)
         {
             //TODO maybe set cursors using first(skeleton) -> right hand (or maybe using another class?)
+            //마우스 이동 부분
+            CursorEvent.cursorMove(first);
+        }
+
+        //핸드포인터 이벤트
+        private void its_InteractionFrameReady(object sender, InteractionFrameReadyEventArgs e)
+        {
+            ///////////////////////////////////////////////
+            //Kinect seems to crash/pause/stop somewhere here, don't know why!!
+            ///////////////////////////////////////////////
+            CursorEvent.cursorAction(e);
         }
 
         void SetEvent(Skeleton first)
