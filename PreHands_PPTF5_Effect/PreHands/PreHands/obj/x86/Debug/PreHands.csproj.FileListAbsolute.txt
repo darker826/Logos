@@ -19,8 +19,6 @@ C:\Users\sihyeon\Desktop\PreHands_PPTF5_Effect\PreHands\PreHands\bin\Debug\Micro
 C:\Users\sihyeon\Desktop\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.csproj.PreHands.exe.config
 C:\Users\sihyeon\Desktop\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.exe
 C:\Users\sihyeon\Desktop\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.pdb
-C:\Users\Jaeung\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.exe
-C:\Users\Jaeung\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.pdb
 C:\Users\Jaeung\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\Debug\PreHands.exe.config
 C:\Users\Jaeung\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\Debug\PreHands.exe
 C:\Users\Jaeung\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\Debug\PreHands.pdb
@@ -43,3 +41,5 @@ C:\Users\Jaeung\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\De
 C:\Users\Jaeung\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.g.resources
 C:\Users\Jaeung\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.Properties.Resources.resources
 C:\Users\Jaeung\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.csproj.GenerateResource.Cache
+C:\Users\Jaeung\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.exe
+C:\Users\Jaeung\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.pdb
