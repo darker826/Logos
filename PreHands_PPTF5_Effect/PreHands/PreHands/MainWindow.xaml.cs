@@ -20,6 +20,7 @@ using Microsoft.Kinect;
 using Coding4Fun.Kinect.Wpf;
 using PreHands.eventHandler;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace PreHands
 {
@@ -34,6 +35,7 @@ namespace PreHands
         public MainWindow()
         {
             InitializeComponent();
+            hoverButtonRight.Click += new RoutedEventHandler(hoverButtonRight_Click);
         }
 
         bool closing = false;
@@ -46,6 +48,38 @@ namespace PreHands
             kinectSensorChooser1.KinectSensorChanged += new DependencyPropertyChangedEventHandler(kinectSensorChooser1_KinectSensorChanged);
 
         }
+
+        //Button Click
+       
+       
+            void hoverButtonRight_Click(object sender, RoutedEventArgs e)
+            {
+                // ppt mode 실행 시 Window 창 최소화 시킴
+                this.WindowState = WindowState.Minimized;
+                e.Handled = true;
+
+            }
+
+            void hoverButtonRight_Click2(object sender, RoutedEventArgs e)
+            {
+                // Mouse mode 실행 시 Window 창 최소화 시킴
+                this.WindowState = WindowState.Minimized;
+                e.Handled = true;
+            }
+
+            void hoverButtonRight_Click3(object sender, RoutedEventArgs e)
+            {
+                // Recoding 실행 시 Window 창 최소화 시킴
+                this.WindowState = WindowState.Minimized;
+                e.Handled = true;
+            }
+
+            /// Called when the OnLoaded storyboard completes.
+            private void OnLoadedStoryboardCompleted(object sender, System.EventArgs e)
+            {
+                var parent = (Canvas)this.Parent;
+                parent.Children.Remove(this);
+            }
 
         void kinectSensorChooser1_KinectSensorChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
@@ -249,4 +283,37 @@ namespace PreHands
 
 
     }
+}
+
+
+// Hyperlink event 
+public partial class HoverButton : Window
+{
+    public static readonly DependencyProperty PPTUriProperty =
+            DependencyProperty.Register("PPTUri", typeof(Uri), typeof(HoverButton), new UIPropertyMetadata(null));
+
+    public static readonly DependencyProperty RecordUriProperty =
+            DependencyProperty.Register("RecordUri", typeof(Uri), typeof(HoverButton), new UIPropertyMetadata(null));
+
+    public Uri PPTUri
+    {
+        get { return (Uri)GetValue(PPTUriProperty); }
+        set { SetValue(PPTUriProperty, value); }
+    }
+
+    public Uri RecordUri
+    {
+        get { return (Uri)GetValue(RecordUriProperty); }
+        set { SetValue(RecordUriProperty, value); }
+    }
+
+    private void Uri( HoverButton hoverButtonRight)
+    {
+        Uri PPTUri = null;
+        Uri RecordUri = null;
+       
+        PPTUri = new Uri("http://naver.com");
+        RecordUri = new Uri("http://naver.com");
+    }
+    
 }

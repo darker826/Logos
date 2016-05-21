@@ -55,13 +55,13 @@ namespace Microsoft.Samples.Kinect.WpfViewers
             Binding binding = new Binding("Message") { Source = this };
             MessageTextBlock.SetBinding(TextBlock.TextProperty, binding);
             Binding binding2 = new Binding("MoreInfo") { Source = this };
-            TellMeMoreLink.SetBinding(TextBlock.ToolTipProperty, binding2);
+            //TellMeMoreLink.SetBinding(TextBlock.ToolTipProperty, binding2);
             Binding binding3 = new Binding("MoreInfo") { Source = this, Converter = new NullToVisibilityConverter() };
-            TellMeMore.SetBinding(TextBlock.VisibilityProperty, binding3);
+            //TellMeMore.SetBinding(TextBlock.VisibilityProperty, binding3);
             Binding binding4 = new Binding("ShowRetry") { Source = this, Converter = new BoolToVisibilityConverter() };
-            RetryButton.SetBinding(Button.VisibilityProperty, binding4);
+            //RetryButton.SetBinding(Button.VisibilityProperty, binding4);
             Binding binding5 = new Binding("MoreInfoUri") { Source = this };
-            TellMeMoreLink.SetBinding(Hyperlink.NavigateUriProperty, binding5);
+            //TellMeMoreLink.SetBinding(Hyperlink.NavigateUriProperty, binding5);
 
             this.UpdateMessage(
                 KinectStatus.Undefined,

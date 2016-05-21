@@ -29,13 +29,7 @@
                            VerticalAlignment="Center" HorizontalAlignment="Center" 
                            FontSize="20" FontWeight="Bold" 
                            Name="MessageTextBlock" TextWrapping="WrapWithOverflow"
-                           >Required</TextBlock>
-                <TextBlock Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,0" Name="TellMeMore">
-                    <Hyperlink Foreground="White" Cursor="Hand" Name="TellMeMoreLink" RequestNavigate="TellMeMoreLinkRequestNavigate">
-                        Tell me more
-                    </Hyperlink>
-                </TextBlock>
-                <Button Name="RetryButton" Grid.Row="3" HorizontalAlignment="Center" Click="RetryButtonClick">_Retry</Button>
+                           >Pre Hands by Logos</TextBlock>
             </Grid>
         </Border>
     </Grid>
