@@ -20,8 +20,7 @@ using Microsoft.Kinect;
 using Coding4Fun.Kinect.Wpf;
 using PreHands.eventHandler;
 using System.Windows.Forms;
-using Microsoft.Samples.Kinect.WpfViewers;
-using Microsoft.Kinect.Toolkit.Interaction;
+using System.Globalization;
 
 namespace PreHands
 {
@@ -32,10 +31,11 @@ namespace PreHands
    
     public partial class MainWindow : Window
     {
-        private InteractionStream _interactionStream;
+        
         public MainWindow()
         {
             InitializeComponent();
+            hoverButtonRight.Click += new RoutedEventHandler(hoverButtonRight_Click);
         }
 
         bool closing = false;
@@ -48,6 +48,38 @@ namespace PreHands
             kinectSensorChooser1.KinectSensorChanged += new DependencyPropertyChangedEventHandler(kinectSensorChooser1_KinectSensorChanged);
 
         }
+
+        //Button Click
+       
+       
+            void hoverButtonRight_Click(object sender, RoutedEventArgs e)
+            {
+                // ppt mode 실행 시 Window 창 최소화 시킴
+                this.WindowState = WindowState.Minimized;
+                e.Handled = true;
+
+            }
+
+            void hoverButtonRight_Click2(object sender, RoutedEventArgs e)
+            {
+                // Mouse mode 실행 시 Window 창 최소화 시킴
+                this.WindowState = WindowState.Minimized;
+                e.Handled = true;
+            }
+
+            void hoverButtonRight_Click3(object sender, RoutedEventArgs e)
+            {
+                // Recoding 실행 시 Window 창 최소화 시킴
+                this.WindowState = WindowState.Minimized;
+                e.Handled = true;
+            }
+
+            /// Called when the OnLoaded storyboard completes.
+            private void OnLoadedStoryboardCompleted(object sender, System.EventArgs e)
+            {
+                var parent = (Canvas)this.Parent;
+                parent.Children.Remove(this);
+            }
 
         void kinectSensorChooser1_KinectSensorChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
@@ -77,9 +109,6 @@ namespace PreHands
             sensor.AllFramesReady += new EventHandler<AllFramesReadyEventArgs>(sensor_AllFramesReady);
             sensor.DepthStream.Enable(DepthImageFormat.Resolution640x480Fps30); 
             sensor.ColorStream.Enable(ColorImageFormat.RgbResolution640x480Fps30);
-
-            _interactionStream = new InteractionStream(sensor, new MDKinectInteractions());
-            _interactionStream.InteractionFrameReady += its_InteractionFrameReady;
 
             try
             {
@@ -119,69 +148,11 @@ namespace PreHands
 
             setCursor(first);
 
-            //interactionStream에 skeleton과 depth 등록
-            setInteraction(e);
-
         }
 
-        //interactionStream에 skeleton과 depth 등록
-        private void setInteraction(AllFramesReadyEventArgs e)
-        {
-            KinectSensor _sensor = kinectSensorChooser1.Kinect;
-
-            if (_sensor == null)
-            {
-                return;
-            }
-            using (SkeletonFrame skeletonFrame = e.OpenSkeletonFrame())
-            {
-
-                if (skeletonFrame == null)
-                    return;
-
-                try
-                {
-                    skeletonFrame.CopySkeletonDataTo(allSkeletons);
-                    var accelerometerReading = _sensor.AccelerometerGetCurrentReading();
-                    _interactionStream.ProcessSkeleton(allSkeletons, accelerometerReading, skeletonFrame.Timestamp);
-                }
-                catch (InvalidOperationException)
-                {
-                    // SkeletonFrame functions may throw when the sensor gets
-                    // into a bad state.  Ignore the frame in that case.
-                }
-            }
-            using (DepthImageFrame depthFrame = e.OpenDepthImageFrame())
-            {
-                if (depthFrame == null)
-                    return;
-
-                try
-                {
-                    _interactionStream.ProcessDepth(depthFrame.GetRawPixelData(), depthFrame.Timestamp);
-                }
-                catch (InvalidOperationException)
-                {
-                    // DepthFrame functions may throw when the sensor gets
-                    // into a bad state.  Ignore the frame in that case.
-                }
-            }
-        }
-
-        private void setCursor(Skeleton first)
+        void setCursor(Skeleton first)
         {
             //TODO maybe set cursors using first(skeleton) -> right hand (or maybe using another class?)
-            //마우스 이동 부분
-            CursorEvent.cursorMove(first);
-        }
-
-        //핸드포인터 이벤트
-        private void its_InteractionFrameReady(object sender, InteractionFrameReadyEventArgs e)
-        {
-            ///////////////////////////////////////////////
-            //Kinect seems to crash/pause/stop somewhere here, don't know why!!
-            ///////////////////////////////////////////////
-            CursorEvent.cursorAction(e);
         }
 
         void SetEvent(Skeleton first)
@@ -312,4 +283,37 @@ namespace PreHands
 
 
     }
+}
+
+
+// Hyperlink event 
+public partial class HoverButton : Window
+{
+    public static readonly DependencyProperty PPTUriProperty =
+            DependencyProperty.Register("PPTUri", typeof(Uri), typeof(HoverButton), new UIPropertyMetadata(null));
+
+    public static readonly DependencyProperty RecordUriProperty =
+            DependencyProperty.Register("RecordUri", typeof(Uri), typeof(HoverButton), new UIPropertyMetadata(null));
+
+    public Uri PPTUri
+    {
+        get { return (Uri)GetValue(PPTUriProperty); }
+        set { SetValue(PPTUriProperty, value); }
+    }
+
+    public Uri RecordUri
+    {
+        get { return (Uri)GetValue(RecordUriProperty); }
+        set { SetValue(RecordUriProperty, value); }
+    }
+
+    private void Uri( HoverButton hoverButtonRight)
+    {
+        Uri PPTUri = null;
+        Uri RecordUri = null;
+       
+        PPTUri = new Uri("http://naver.com");
+        RecordUri = new Uri("http://naver.com");
+    }
+    
 }
