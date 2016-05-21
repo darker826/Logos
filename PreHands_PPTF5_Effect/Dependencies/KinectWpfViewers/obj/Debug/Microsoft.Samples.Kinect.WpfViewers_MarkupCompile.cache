@@ -4,7 +4,11 @@
 library
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\sihyeon\logos\PreHands_PPTF5_Effect\Dependencies\KinectWpfViewers\obj\Debug\
+=======
+C:\Users\Jaeung\Desktop\Logos\PreHands_PPTF5_Effect\Dependencies\KinectWpfViewers\obj\Debug\
+>>>>>>> 1b6f0866fc79ea2c7a3661497a33f5de2eecd80c
 Microsoft.Samples.Kinect.WpfViewers
 none
 false
