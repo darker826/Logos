@@ -68,3 +68,31 @@ C:\Users\Jaeung\Desktop\새 폴더 (2)\Logos\PreHands_PPTF5_Effect\PreHands\PreH
 C:\Users\Jaeung\Desktop\새 폴더 (2)\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Jaeung\Desktop\새 폴더 (2)\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands_MarkupCompile.cache
 C:\Users\Jaeung\Desktop\새 폴더 (2)\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands_MarkupCompile.lref
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.csproj.PreHands.exe.config
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\Common\StandardStyles.baml
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\SettingsControl.g.cs
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\App.g.cs
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands_MarkupCompile.cache
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands_MarkupCompile.lref
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\Debug\PreHands.exe.config
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\Debug\PreHands.exe
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\Debug\PreHands.pdb
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\Debug\Coding4Fun.Kinect.Wpf.dll
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\Debug\Microsoft.Expression.Drawing.dll
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\Debug\Microsoft.Kinect.dll
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\Debug\Microsoft.Samples.Kinect.WpfViewers.dll
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\Debug\Microsoft.Samples.Kinect.WpfViewers.pdb
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\Debug\Coding4Fun.Kinect.Wpf.pdb
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\Debug\Microsoft.Expression.Drawing.xml
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\Debug\Microsoft.Kinect.xml
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\App.baml
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\MainWindow.baml
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\SettingsControl.baml
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.g.resources
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.Properties.Resources.resources
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.exe
+C:\Users\Administrator\Desktop\git\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.pdb

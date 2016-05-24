@@ -74,10 +74,10 @@ namespace PreHands
             {
                 this.Settings = new Settings();
             }
-            eventChecker.registEventListener += new Skeleton_eventHandler.customEvent(eventListener.ppt_eventLists.startPPTControl);
-            eventCreaterPPT.registEventListener += new Skeleton_eventHandler.customEvent(eventListener.ppt_eventLists.startPPT);
-            eventCreaterPPT.registEventListener += new Skeleton_eventHandler.customEvent(eventListener.ppt_eventLists.SlideChecker);
-            eventCreaterPPT.registEventListener += new Skeleton_eventHandler.customEvent(eventListener.ppt_eventLists.endPPT);
+            eventChecker.registEventListener += new Skeleton_eventHandler.customEvent(ppt_eventLists.startPPTControl);
+            eventCreaterPPT.registEventListener += new Skeleton_eventHandler.customEvent(ppt_eventLists.startPPT);
+            eventCreaterPPT.registEventListener += new Skeleton_eventHandler.customEvent(ppt_eventLists.SlideChecker);
+            eventCreaterPPT.registEventListener += new Skeleton_eventHandler.customEvent(ppt_eventLists.endPPT);
         }
 
         bool closing = false;
