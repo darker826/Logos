@@ -58,3 +58,13 @@ C:\Users\sihyeon\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\D
 C:\Users\sihyeon\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\SettingsControl.baml
 C:\Users\sihyeon\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.g.resources
 C:\Users\sihyeon\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.pdb
+C:\Users\Jaeung\Desktop\새 폴더 (2)\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.csprojResolveAssemblyReference.cache
+C:\Users\Jaeung\Desktop\새 폴더 (2)\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.csproj.PreHands.exe.config
+C:\Users\Jaeung\Desktop\새 폴더 (2)\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands.csproj.ResolveComReference.cache
+C:\Users\Jaeung\Desktop\새 폴더 (2)\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\Common\StandardStyles.baml
+C:\Users\Jaeung\Desktop\새 폴더 (2)\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Jaeung\Desktop\새 폴더 (2)\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\SettingsControl.g.cs
+C:\Users\Jaeung\Desktop\새 폴더 (2)\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\App.g.cs
+C:\Users\Jaeung\Desktop\새 폴더 (2)\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Jaeung\Desktop\새 폴더 (2)\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands_MarkupCompile.cache
+C:\Users\Jaeung\Desktop\새 폴더 (2)\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x86\Debug\PreHands_MarkupCompile.lref

@@ -16,12 +16,11 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Kinect;
 using Coding4Fun.Kinect.Wpf;
-using PreHands.eventHandler;
 using System.Windows.Forms;
 using Microsoft.Samples.Kinect.WpfViewers;
 using Microsoft.Kinect.Toolkit.Interaction;
 using System.Runtime.InteropServices;
-using Microsoft.Office.Core;
+
 
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "UI-WPF", Justification = "Sample is correctly named")]
@@ -311,9 +310,7 @@ namespace PreHands
 
         private void setCursor(Skeleton first)
         {
-            //TODO maybe set cursors using first(skeleton) -> right hand (or maybe using another class?)
-            //마우스 이동 부분
-            CursorEvent.cursorMove(first);
+
         }
 
         //핸드포인터 이벤트
@@ -322,15 +319,11 @@ namespace PreHands
             ///////////////////////////////////////////////
             //Kinect seems to crash/pause/stop somewhere here, don't know why!!
             ///////////////////////////////////////////////
-            CursorEvent.cursorAction(e);
         }
 
         void SetEvent(Skeleton first)
         {
-            Skeleton_eventHandler eventCreater = new Skeleton_eventHandler();
-            eventCreater.registEventListener += new Skeleton_eventHandler.customEvent(eventListener.ppt_eventLists.startPPT);
-            eventCreater.start(new Skeleton_eventArgs(first));
-
+           
         }
 
         void GetCameraPoint(Skeleton first, AllFramesReadyEventArgs e)
