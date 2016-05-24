@@ -72,6 +72,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="PPT\ppt_eventList.cs" />
+    <Compile Include="PPT\Skeleton_eventHandler.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SettingsControl.xaml.cs">
       <DependentUpon>SettingsControl.xaml</DependentUpon>
@@ -136,8 +138,6 @@
     <Resource Include="Images\Settings-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="eventHandler\" />
-    <Folder Include="eventListener\" />
     <Folder Include="Record\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

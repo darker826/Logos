@@ -20,6 +20,7 @@ using System.Windows.Forms;
 using Microsoft.Samples.Kinect.WpfViewers;
 using Microsoft.Kinect.Toolkit.Interaction;
 using System.Runtime.InteropServices;
+using PreHands.PPT;
 
 
 
@@ -56,6 +57,10 @@ namespace PreHands
 
         private InteractionStream _interactionStream;
 
+        Skeleton_eventHandler eventCreaterPPT = new Skeleton_eventHandler();
+        Skeleton_eventHandler eventChecker = new Skeleton_eventHandler();
+        public static bool isPPTActive = false;
+
         public MainWindow()
         {
             this.InitializeComponent();
@@ -69,7 +74,10 @@ namespace PreHands
             {
                 this.Settings = new Settings();
             }
-
+            eventChecker.registEventListener += new Skeleton_eventHandler.customEvent(eventListener.ppt_eventLists.startPPTControl);
+            eventCreaterPPT.registEventListener += new Skeleton_eventHandler.customEvent(eventListener.ppt_eventLists.startPPT);
+            eventCreaterPPT.registEventListener += new Skeleton_eventHandler.customEvent(eventListener.ppt_eventLists.SlideChecker);
+            eventCreaterPPT.registEventListener += new Skeleton_eventHandler.customEvent(eventListener.ppt_eventLists.endPPT);
         }
 
         bool closing = false;
@@ -217,7 +225,7 @@ namespace PreHands
             }
 
             //regist events
-            SetEvent(first);
+            checkEvent(first);
 
             //set scaled position
             //ScalePosition(headImage, first.Joints[JointType.Head]);
@@ -321,9 +329,13 @@ namespace PreHands
             ///////////////////////////////////////////////
         }
 
-        void SetEvent(Skeleton first)
+        void checkEvent(Skeleton first)
         {
-           
+            eventChecker.start(new Skeleton_eventArgs(first));
+            if (isPPTActive)
+            {
+                eventCreaterPPT.start(new Skeleton_eventArgs(first));
+            }
         }
 
         void GetCameraPoint(Skeleton first, AllFramesReadyEventArgs e)
