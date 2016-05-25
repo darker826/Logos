@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreHands", "PreHands\PreHands.csproj", "{9B080D1C-118F-4734-925C-A59838A43643}"
 EndProject
@@ -18,8 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9B080D1C-118F-4734-925C-A59838A43643}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{9B080D1C-118F-4734-925C-A59838A43643}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{9B080D1C-118F-4734-925C-A59838A43643}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{9B080D1C-118F-4734-925C-A59838A43643}.Debug|Mixed Platforms.ActiveCfg = Debug|x64
+		{9B080D1C-118F-4734-925C-A59838A43643}.Debug|Mixed Platforms.Build.0 = Debug|x64
 		{9B080D1C-118F-4734-925C-A59838A43643}.Debug|x86.ActiveCfg = Debug|x86
 		{9B080D1C-118F-4734-925C-A59838A43643}.Debug|x86.Build.0 = Debug|x86
 		{9B080D1C-118F-4734-925C-A59838A43643}.Release|Any CPU.ActiveCfg = Release|x86

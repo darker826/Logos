@@ -21,6 +21,7 @@ using Microsoft.Samples.Kinect.WpfViewers;
 using Microsoft.Kinect.Toolkit.Interaction;
 using System.Runtime.InteropServices;
 using PreHands.PPT;
+using PreHands.MouseControl;
 
 
 
@@ -284,6 +285,17 @@ namespace PreHands
                 }
             }
         }
+        private void setCursor(Skeleton first)
+        {
+            //마우스 이동 부분
+            CursorEvent.cursorMove(first);
+        }
+
+        //핸드포인터 이벤트
+        private void its_InteractionFrameReady(object sender, InteractionFrameReadyEventArgs e)
+        {
+            CursorEvent.cursorAction(e);
+        }
 
         //Button Click
         void hoverButtonRight_Click(object sender, RoutedEventArgs e)
@@ -316,18 +328,7 @@ namespace PreHands
         }
 
 
-        private void setCursor(Skeleton first)
-        {
-
-        }
-
-        //핸드포인터 이벤트
-        private void its_InteractionFrameReady(object sender, InteractionFrameReadyEventArgs e)
-        {
-            ///////////////////////////////////////////////
-            //Kinect seems to crash/pause/stop somewhere here, don't know why!!
-            ///////////////////////////////////////////////
-        }
+        
 
         void checkEvent(Skeleton first)
         {
