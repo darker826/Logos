@@ -11,11 +11,14 @@ namespace PreHands
     using System.Windows;
     using System.Xaml;
     using System.Xml;
+    using System.ComponentModel;
+    using System.Windows.Input;
 
     using Microsoft.Win32;
 
     public static class SettingsManager
     {
+
         private const string DefaultFileName = "Settings";
 
         private const string DefaultFileExtension = ".xml";

@@ -41,21 +41,8 @@ namespace PreHands
     /// </summary>
     /// 
 
-    public partial class MainWindow 
+    public partial class MainWindow
     {
-        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "There is no immutable RoutedUICommand variant, and readonly provides some measure of protection")]
-        public static readonly RoutedUICommand ShowSettings = new RoutedUICommand(Properties.Resources.ShowSettingsCaption, "ShowSettings", typeof(MainWindow));
-
-        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "There is no immutable RoutedUICommand variant, and readonly provides some measure of protection")]
-        public static readonly RoutedUICommand HideSettings = new RoutedUICommand(Properties.Resources.HideSettingsCaption, "HideSettings", typeof(MainWindow));
-
-        public static readonly DependencyProperty SettingsProperty =
-            DependencyProperty.Register("Settings", typeof(Settings), typeof(MainWindow), new FrameworkPropertyMetadata(null, (o, args) => ((MainWindow)o).OnSettingsChanged((Settings)args.OldValue, (Settings)args.NewValue)));
-
-
-        private readonly string settingsFileName = SettingsManager.DefaultSettingsFileName;
-        
-
         private InteractionStream _interactionStream;
 
         Skeleton_eventHandler eventCreaterPPT = new Skeleton_eventHandler();
@@ -66,15 +53,8 @@ namespace PreHands
         {
             this.InitializeComponent();
 
-            Settings newSettings;
-            if (SettingsManager.TryLoadSettingsNoUi(this.settingsFileName, out newSettings))
-            {
-                this.Settings = newSettings;
-            }
-            else
-            {
-                this.Settings = new Settings();
-            }
+            if (DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject())) return;
+
             eventChecker.registEventListener += new Skeleton_eventHandler.customEvent(ppt_eventLists.startPPTControl);
             eventCreaterPPT.registEventListener += new Skeleton_eventHandler.customEvent(ppt_eventLists.startPPT);
             eventCreaterPPT.registEventListener += new Skeleton_eventHandler.customEvent(ppt_eventLists.SlideChecker);
@@ -82,7 +62,7 @@ namespace PreHands
         }
 
         bool closing = false;
-        const int skeletonCount = 6; 
+        const int skeletonCount = 6;
         Skeleton[] allSkeletons = new Skeleton[skeletonCount];
 
 
@@ -115,10 +95,10 @@ namespace PreHands
             };
             sensor.SkeletonStream.Enable(parameters);
 
-  //          sensor.SkeletonStream.Enable();
+            //          sensor.SkeletonStream.Enable();
 
             sensor.AllFramesReady += new EventHandler<AllFramesReadyEventArgs>(sensor_AllFramesReady);
-            sensor.DepthStream.Enable(DepthImageFormat.Resolution640x480Fps30); 
+            sensor.DepthStream.Enable(DepthImageFormat.Resolution640x480Fps30);
             sensor.ColorStream.Enable(ColorImageFormat.RgbResolution640x480Fps30);
 
             _interactionStream = new InteractionStream(sensor, new MDKinectInteractions());
@@ -134,83 +114,24 @@ namespace PreHands
             }
         }
 
-        //Setting Slidebar
-        public Settings Settings
+
+        private void OnShowSettings(object sender, MouseEventArgs e)
         {
-            get
-            {
-                return (Settings)this.GetValue(SettingsProperty);
-            }
-
-            set
-            {
-                this.SetValue(SettingsProperty, value);
-            }
-        }
-
-        private void OnLoad(object sender, ExecutedRoutedEventArgs e)
-        {
-            Settings newSettings;
-            if (!SettingsManager.TryLoadSettingsWithOpenFileDialog(this.settingsFileName, out newSettings))
-            {
-                return;
-            }
-
-            this.Settings = newSettings;
-        }
-
-        public void OnShowSettings(object sender, ExecutedRoutedEventArgs e)
-        {
+            this.setting_title.Visibility = Visibility.Collapsed;
+            this.setting_img.Visibility = Visibility.Collapsed;
             this.SettingsControl.Visibility = Visibility.Visible;
-            this.SettingsButton.Visibility = Visibility.Hidden;
+
+
         }
 
-        public void OnHideSettings(object sender, ExecutedRoutedEventArgs e)
+        public void OnHideSettings(object sender, MouseEventArgs e)
         {
-            this.SettingsControl.Visibility = Visibility.Hidden;
-            this.SettingsButton.Visibility = Visibility.Visible;
+            this.setting_title.Visibility = Visibility.Visible;
+            this.setting_img.Visibility = Visibility.Visible;
+            this.SettingsControl.Visibility = Visibility.Collapsed;
         }
-
-        private void OnSettingsChanged(Settings oldValue, Settings newValue)
-        {
-            if (oldValue != null)
-            {
-                oldValue.ParameterChanged -= this.OnSettingsParameterChanged;
-            }
-
-            if (newValue != null)
-            {
-                newValue.ParameterChanged += this.OnSettingsParameterChanged;
-                this.OnSettingsParameterChanged(null, null);
-            }
-
-            this.Settings = newValue; //임시
-        }
-
-        private void OnSizeChanged(object sender, SizeChangedEventArgs sizeChangedEventArgs)
-        {
-            this.Settings.DisplayWidthInPixels = sizeChangedEventArgs.NewSize.Width;
-            this.Settings.DisplayHeightInPixels = sizeChangedEventArgs.NewSize.Height;
-        }
-
-        private void OnSettingsParameterChanged(object sender, EventArgs eventArgs)
-        {
-            if (this.Settings.FullScreen
-                && (this.WindowState != WindowState.Maximized || this.WindowStyle != WindowStyle.None))
-            {
-                this.WindowState = WindowState.Maximized;
-                this.WindowStyle = WindowStyle.None;
-            }
-
-            if (!this.Settings.FullScreen && this.WindowStyle == WindowStyle.None)
-            {
-                this.WindowStyle = WindowStyle.SingleBorderWindow;
-            }
-
-        }
-
-            //THIS IS THE REAL ACTS LIKE MAIN PART; WE HAVE TO FIX THIS.
-            void sensor_AllFramesReady(object sender, AllFramesReadyEventArgs e)
+        //THIS IS THE REAL ACTS LIKE MAIN PART; WE HAVE TO FIX THIS.
+        void sensor_AllFramesReady(object sender, AllFramesReadyEventArgs e)
         {
             if (closing)
             {
@@ -328,7 +249,7 @@ namespace PreHands
         }
 
 
-        
+
 
         void checkEvent(Skeleton first)
         {
@@ -381,26 +302,26 @@ namespace PreHands
                 CameraPosition(rightEllipse, rightColorPoint);
 
 
-            }        
+            }
         }
 
-       
+
         Skeleton GetFirstSkeleton(AllFramesReadyEventArgs e)
         {
             using (SkeletonFrame skeletonFrameData = e.OpenSkeletonFrame())
             {
                 if (skeletonFrameData == null)
                 {
-                    return null; 
+                    return null;
                 }
 
-                
+
                 skeletonFrameData.CopySkeletonDataTo(allSkeletons);
 
                 //get the first tracked skeleton
                 Skeleton first = (from s in allSkeletons
-                                         where s.TrackingState == SkeletonTrackingState.Tracked
-                                         select s).FirstOrDefault();
+                                  where s.TrackingState == SkeletonTrackingState.Tracked
+                                  select s).FirstOrDefault();
 
                 return first;
 
@@ -440,57 +361,20 @@ namespace PreHands
         {
             //convert the value to X/Y
             //Joint scaledJoint = joint.ScaleTo(1280, 720); 
-            
+
             //convert & scale (.3 = means 1/3 of joint distance)
             Joint scaledJoint = joint.ScaleTo(1280, 720, .3f, .3f);
 
             Canvas.SetLeft(element, scaledJoint.Position.X);
-            Canvas.SetTop(element, scaledJoint.Position.Y); 
-            
+            Canvas.SetTop(element, scaledJoint.Position.Y);
+
         }
 
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            closing = true; 
-            StopKinect(kinectSensorChooser1.Kinect); 
+            closing = true;
+            StopKinect(kinectSensorChooser1.Kinect);
         }
-
-
-
     }
 }
-
-/*
-// Hyperlink event 
-public partial class HoverButton : Window
-{
-    public static readonly DependencyProperty PPTUriProperty =
-            DependencyProperty.Register("PPTUri", typeof(Uri), typeof(HoverButton), new UIPropertyMetadata(null));
-
-    public static readonly DependencyProperty RecordUriProperty =
-            DependencyProperty.Register("RecordUri", typeof(Uri), typeof(HoverButton), new UIPropertyMetadata(null));
-
-    public Uri PPTUri
-    {
-        get { return (Uri)GetValue(PPTUriProperty); }
-        set { SetValue(PPTUriProperty, value); }
-    }
-
-    public Uri RecordUri
-    {
-        get { return (Uri)GetValue(RecordUriProperty); }
-        set { SetValue(RecordUriProperty, value); }
-    }
-
-    private void Uri(HoverButton hoverButtonRight)
-    {
-        Uri PPTUri = null;
-        Uri RecordUri = null;
-
-        PPTUri = new Uri("http://naver.com");
-        RecordUri = new Uri("http://naver.com");
-    }
-
-}
-*/

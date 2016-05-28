@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PreHands"
              mc:Ignorable="d" 
              Background="{StaticResource SettingsControlBackground}"
-             Width="417"
+             Width="213" Margin="0,0,0,0"
              >
     <UserControl.Resources>
         <Style x:Key="SettingsTitleStyle" TargetType="TextBlock">
@@ -19,14 +19,14 @@
         </Style>
 
         <Style x:Key="SettingsSectionTitleStyle" TargetType="TextBlock">
-            <Setter Property="Margin" Value="27,7,0,0"/>
+            <Setter Property="Margin" Value="2,5,0,0"/>
             <Setter Property="Foreground" Value="{StaticResource KinectPurpleBrush}"/>
             <Setter Property="FontWeight" Value="SemiBold" />
             <Setter Property="FontSize" Value="10pt" />
         </Style>
 
         <Style x:Key="SettingsSubSectionTitleStyle" TargetType="TextBlock">
-            <Setter Property="Margin" Value="30,16,0,3"/>
+            <Setter Property="Margin" Value="2,5,0,3"/>
             <Setter Property="Foreground" Value="{StaticResource DarkGrayTextBrush}"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="FontSize" Value="10pt" />
@@ -34,17 +34,8 @@
         </Style>
 
         <Style TargetType="Separator">
-            <Setter Property="Margin" Value="20,4,20,0" />
+            <Setter Property="Margin" Value="20,-100,20,0" />
             <Setter Property="Background" Value="{StaticResource LightGrayBrush}" />
-        </Style>
-
-        <Style TargetType="CheckBox">
-            <Setter Property="Margin" Value="30,8,0,0"/>
-            <Setter Property="Foreground" Value="{StaticResource LightGrayBrush}"/>
-            <Setter Property="FontSize" Value="10pt" />
-            <Setter Property="FontWeight" Value="Light" />
-            <Setter Property="Background" Value="{StaticResource CheckBoxBackgroundBrush}" />
-            <Setter Property="Padding" Value="0,0,0,0" />
         </Style>
 
         <Style x:Key="SaveOpenButtonStyle" TargetType="Button">
@@ -57,43 +48,38 @@
             <Setter Property="VerticalContentAlignment" Value="Center" />
             <Setter Property="HorizontalContentAlignment" Value="Center" />
             <Setter Property="Padding" Value="10, 0, 10, 0" />
-            <Setter Property="Height" Value="24" />
+            <Setter Property="Height" Value="40" />
         </Style>
     </UserControl.Resources>
-    <Grid x:Name="LayoutRoot">
-        <TextBlock Style="{StaticResource SettingsSectionTitleStyle}" Text="APPLICATION SETTINGS"/>
+    <Grid x:Name="LayoutRoot" VerticalAlignment="Center">
+        <TextBlock Style="{StaticResource SettingsSectionTitleStyle}" Text="WELCOME TO PRE HANDS" TextAlignment="Center"/>
 
-            <Grid>
-                <Grid.ColumnDefinitions >
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-                <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource SettingsSubSectionTitleStyle}" Text="Diagnostic Display" />
-                <CheckBox Grid.Column="0" Grid.Row="1" Content="Show projected skeleton" IsChecked="{Binding Path=Settings.ShowProjectedSkeleton}" />
-                <CheckBox Grid.Column="0" Grid.Row="2" Content="Show user viewer in far mode" IsChecked="{Binding Path=Settings.ShowUserViewerInFarMode}" />
-                <CheckBox Grid.Column="0" Grid.Row="3" Content="Optimal UI placement preview" IsChecked="{Binding Path=Settings.ShowUiPlacementPreview}" />
+            <TextBlock Grid.Column="0" Margin="40, 23"  Style="{StaticResource SettingsSubSectionTitleStyle}" Text="Setting Mode Display"/>
+            
 
-                <TextBlock Grid.Column="1" Grid.Row="0" Style="{StaticResource SettingsSubSectionTitleStyle}" Text="Window" />
-                <CheckBox Grid.Column="1" Grid.Row="1" Content="Full screen" IsChecked="{Binding Path=Settings.FullScreen}" />
-            </Grid>
+        </Grid>
 
-            <Separator/>
+        <DockPanel>
+            <StackPanel Orientation="Vertical" Margin="50,60,50,10" DockPanel.Dock="top">
+            <Button Content="PPT Control" Style="{StaticResource SaveOpenButtonStyle}" Margin="0,10,0,0"  Click="Button_Click" />
+            <Button Content="Mouse Control" Style="{StaticResource SaveOpenButtonStyle}" Margin="0,10,0,0" Click="Button_Click_1" />
+            <Button Content="Start Record" Style="{StaticResource SaveOpenButtonStyle}" Margin="0,10,0,0" Click="Button_Click_2" />
+            </StackPanel>
+        </DockPanel>
 
-        <StackPanel Margin="30,15,0,10" Orientation="Horizontal">
-            <Button Style="{StaticResource SaveOpenButtonStyle}" Content="SAVE SETTINGS" Command="Save" />
-            <Button Style="{StaticResource SaveOpenButtonStyle}" Margin="10,0,0,0" Content="OPEN SETTINGS" Command="Open" />
-        </StackPanel>
-
-        <Button HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="50" Background="Transparent" FontFamily="Segoe UI Symbol" BorderBrush="{x:Null}" Margin="0,15,24,0"  Foreground="{StaticResource LightGrayBrush}" Command="{x:Static local:MainWindow.HideSettings}">
-            <Image Source="Images\Close-icon.png" Width="33" Height="33"/>
-        </Button>
+        <!--<Button HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="50" Background="Transparent" FontFamily="Segoe UI Symbol" BorderBrush="{x:Null}" Margin="0,5,0,0"  Foreground="{StaticResource LightGrayBrush}" >
+            <Image Source="Images\Close-icon.png"  Width="30" Height="30"/>
+        </Button>-->
     </Grid>
 </UserControl>
 
