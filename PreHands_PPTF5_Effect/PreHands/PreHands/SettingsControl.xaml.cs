@@ -60,10 +60,16 @@ namespace PreHands
             e.Handled = true;
             if(RecordController.recordBool == false)
             {
+                if (RecordController.openBool == false)
+                {
+                    RecordController.openBool = true;
+                }
                 RecordController.recordBool = true;
                 recordState.Visibility = Visibility.Visible;
+                
             } else if (RecordController.recordBool)
             {
+                RecordController.recordingStop();
                 RecordController.recordBool = false;
                 recordState.Visibility = Visibility.Hidden;
             }

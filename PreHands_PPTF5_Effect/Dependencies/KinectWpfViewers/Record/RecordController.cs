@@ -40,12 +40,19 @@ namespace Microsoft.Samples.Kinect.WpfViewers
 
                 if (openBool)
                 {
+                    String fileName = DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".avi";
                     openBool = false;
-                    writer.Open("test.avi", colorImage.Width, colorImage.Height, 25, VideoCodec.MPEG4);
+                    writer.Open(fileName, colorImage.Width, colorImage.Height, 25, VideoCodec.MPEG4);
                 }
 
                 writer.WriteVideoFrame(bmap);
             }
+        }
+
+        //녹화를 중지할때 부를 함수
+        public static void recordingStop()
+        {
+            writer.Close();
         }
 
         //colorImageFrame을 받아서 Bitmap으로 변환해주는 함수.
