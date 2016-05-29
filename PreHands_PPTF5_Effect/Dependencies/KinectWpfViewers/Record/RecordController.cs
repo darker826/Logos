@@ -22,46 +22,30 @@ namespace Microsoft.Samples.Kinect.WpfViewers
     public class RecordController
     {
         private static VideoFileWriter writer;
-        private static Timer timer;
-        private static bool testBool = true;
-
+        public static bool openBool = true;
+        public static bool recordBool = false;
 
         public RecordController()
         {
             writer = new VideoFileWriter();
         }
 
-        //타이머 작동시 불리는 함수
-        public static void timerEvent(object sender, EventArgs e)
-        {
-            Console.WriteLine("타이머 한번 불렸음");
-            writer.Close();
-            timer.Stop();
-        }
-
         //녹화 시작할 때 부를 함수.
         public void recordingStart(ColorImageFrame colorImage, WriteableBitmap writeBmp)
         {
-            //타이머 셋팅
-            if (timer == null)
+            if (recordBool)
             {
-                timer = new Timer();
-                timer.Enabled = true;
-                timer.Interval = 10000;
-                timer.Tick += new EventHandler(timerEvent);
+                //        Bitmap bmap = colorFrameToBitmap(colorImage);
+                Bitmap bmap = bitmapFromWriteableBitmap(writeBmp);
+
+                if (openBool)
+                {
+                    openBool = false;
+                    writer.Open("test.avi", colorImage.Width, colorImage.Height, 25, VideoCodec.MPEG4);
+                }
+
+                writer.WriteVideoFrame(bmap);
             }
-
-            //        Bitmap bmap = colorFrameToBitmap(colorImage);
-            Bitmap bmap = bitmapFromWriteableBitmap(writeBmp);
-
-            if (testBool)
-            {
-                testBool = false;
-                timer.Start();
-                writer.Open("test.avi", colorImage.Width, colorImage.Height, 25, VideoCodec.MPEG4);
-            }
-
-            writer.WriteVideoFrame(bmap);
         }
 
         //colorImageFrame을 받아서 Bitmap으로 변환해주는 함수.

@@ -48,6 +48,7 @@ namespace PreHands
         Skeleton_eventHandler eventCreaterPPT = new Skeleton_eventHandler();
         Skeleton_eventHandler eventChecker = new Skeleton_eventHandler();
         public static bool isPPTActive = false;
+        public static bool isMouseActive = true;
 
         public MainWindow()
         {
@@ -209,13 +210,19 @@ namespace PreHands
         private void setCursor(Skeleton first)
         {
             //마우스 이동 부분
-            CursorEvent.cursorMove(first);
+            if (isMouseActive)
+            {
+                CursorEvent.cursorMove(first);
+            }  
         }
 
         //핸드포인터 이벤트
         private void its_InteractionFrameReady(object sender, InteractionFrameReadyEventArgs e)
         {
-            CursorEvent.cursorAction(e);
+            if (isMouseActive)
+            {
+                CursorEvent.cursorAction(e);
+            }    
         }
 
         //Button Click
