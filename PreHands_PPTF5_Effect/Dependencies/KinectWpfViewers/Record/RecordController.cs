@@ -41,8 +41,11 @@ namespace Microsoft.Samples.Kinect.WpfViewers
                 if (openBool)
                 {
                     String fileName = DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".avi";
+                    String filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);
+                    String file = filePath + "//" + fileName;
+
                     openBool = false;
-                    writer.Open(fileName, colorImage.Width, colorImage.Height, 25, VideoCodec.MPEG4);
+                    writer.Open(file, colorImage.Width, colorImage.Height, 25, VideoCodec.MPEG4);
                 }
 
                 writer.WriteVideoFrame(bmap);
