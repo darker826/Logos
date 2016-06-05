@@ -5,22 +5,23 @@
         xmlns:Controls="clr-namespace:Coding4Fun.Kinect.Wpf.Controls;assembly=Coding4Fun.Kinect.Wpf" 
         xmlns:local="clr-namespace:PreHands"
         Closing="Window_Closing" 
-        Title="EFFECTIVE MOTION CONTROL [Pre Hands]" Height="600" Width="800" Loaded="Window_Loaded" 
-        WindowState="Maximized"
+        Title="EFFECTIVE MOTION CONTROL [Pre Hands]" Height="480" Width="640" Loaded="Window_Loaded" 
         >
    
     <Canvas Name="MainCanvas" >
-        <my:KinectColorViewer Stretch="UniformToFill" Canvas.Left="0" Canvas.Top="0" Width="800" Height="600" Name="kinectColorViewer1" 
-                              Kinect="{Binding ElementName=kinectSensorChooser1, Path=Kinect}" >
+        <my:KinectColorViewer Stretch="Fill" Canvas.Left="0" Canvas.Top="0" Name="kinectColorViewer1" 
+                              Kinect="{Binding ElementName=kinectSensorChooser1, Path=Kinect}" 
+                              Width="640"
+                              Height="480">
         </my:KinectColorViewer>
 
-        <Ellipse Canvas.Left="0" Canvas.Top="0" Height="50" Name="leftEllipse"  Width="50" Fill="#FF4D298D" Opacity="1" Stroke="White" />
-        <Ellipse Canvas.Left="100" Canvas.Top="0" Fill="#FF2CACE3" Height="50" Name="rightEllipse" Width="50" Opacity="1" Stroke="White" />
+        <Ellipse Canvas.Left="0" Canvas.Top="0" Height="50" Name="leftEllipse"  Width="50" Fill="#FF4D298D" Opacity="1" Stroke="White" Visibility="Visible"/>
+        <Ellipse Canvas.Left="100" Canvas.Top="0" Fill="#FF2CACE3" Height="50" Name="rightEllipse" Width="50" Opacity="1" Stroke="White" Visibility="Visible"/>
         <my:KinectSensorChooser Canvas.Left="250" Canvas.Top="380" Name="kinectSensorChooser1" Width="328" />
-        <Image Canvas.Left="66" Canvas.Top="90" Height="87" Name="headImage" Stretch="Fill" Width="84" Source="/Images/Face.png" />
+        <Image Canvas.Left="66" Canvas.Top="90" Height="87" Name="headImage" Stretch="Fill" Width="84" Source="/Images/Face.png" Visibility="Visible" />
 
 
-        <Button Name="SettingsButton" Margin="750 0 0 0" VerticalAlignment="Stretch" Canvas.Right="0" Height="{Binding Source={x:Static SystemParameters.FullPrimaryScreenHeight}}"  Width="45" MouseEnter="OnShowSettings" MouseLeave="OnHideSettings">
+        <Button Name="SettingsButton" Margin="750 0 0 0" VerticalAlignment="Stretch" Canvas.Right="0" Height="480"  Width="45" MouseEnter="OnShowSettings" MouseLeave="OnHideSettings">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
@@ -68,7 +69,7 @@
                         Settings
                 </TextBlock>
                 <Image Name ="setting_img" Source="Images\Settings-icon.png" Width="33" Height="33" Margin="0,10,0,0" HorizontalAlignment="Center"/>
-                <local:SettingsControl Margin="0,0,0,0" x:Name="SettingsControl" HorizontalAlignment="Right" VerticalAlignment="Stretch" Settings="{Binding Settings}"  Width="213" RenderTransformOrigin="0.484,0.525" Height="{Binding Source={x:Static SystemParameters.FullPrimaryScreenHeight}}" Visibility="Collapsed"/>
+                <local:SettingsControl Margin="0,0,0,0" x:Name="SettingsControl" HorizontalAlignment="Right" VerticalAlignment="Stretch" Settings="{Binding Settings}"  Width="213" RenderTransformOrigin="0.484,0.525" Height="480" Visibility="Collapsed"/>
             </StackPanel>
         </Button>
         

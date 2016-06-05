@@ -110,10 +110,13 @@ namespace PreHands.MouseControl
                                 //               System.Diagnostics.Debug.WriteLine(coordinateX + "    " + coordinateY + "    " + coordinateZ + "    " + number);
                                 if (doubleClickBool) //더블클릭
                                 {
-                                    mouse_event((int)MouseEventFlags.LEFTDOWN, coordinateX, coordinateY, 0, 0);
-                                    mouse_event((int)MouseEventFlags.LEFTUP, coordinateX, coordinateY, 0, 0);
-                                    mouse_event((int)MouseEventFlags.LEFTDOWN, coordinateX, coordinateY, 0, 0);
-                                    mouse_event((int)MouseEventFlags.LEFTUP, coordinateX, coordinateY, 0, 0);
+                                    int tmpX, tmpY;
+                                    tmpX = coordinateX;
+                                    tmpY = coordinateY;
+                                    mouse_event((int)MouseEventFlags.LEFTDOWN, tmpX, tmpY, 0, 0);
+                                    mouse_event((int)MouseEventFlags.LEFTUP, tmpX, tmpY, 0, 0);
+                                    mouse_event((int)MouseEventFlags.LEFTDOWN, tmpX, tmpY, 0, 0);
+                                    mouse_event((int)MouseEventFlags.LEFTUP, tmpX, tmpY, 0, 0);
                                 }
                                 mouse_event((int)MouseEventFlags.LEFTDOWN, coordinateX, coordinateY, 0, 0);
                                 clickBool = true;

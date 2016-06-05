@@ -42,8 +42,9 @@ namespace PreHands
         {
             MessageBox.Show("PPT Mode가 시작됩니다.");
             e.Handled = true;
-            MainWindow.isPPTActive = true;
             MainWindow.isMouseActive = false;
+            MainWindow.isPPTActive = true;
+            
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -56,10 +57,10 @@ namespace PreHands
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("녹화를 시작합니다.");
             e.Handled = true;
             if(RecordController.recordBool == false)
             {
+                MessageBox.Show("녹화를 시작합니다.");
                 if (RecordController.openBool == false)
                 {
                     RecordController.openBool = true;
@@ -69,6 +70,7 @@ namespace PreHands
                 
             } else if (RecordController.recordBool)
             {
+                MessageBox.Show("녹화를 종료합니다.");
                 RecordController.recordingStop();
                 RecordController.recordBool = false;
                 recordState.Visibility = Visibility.Hidden;

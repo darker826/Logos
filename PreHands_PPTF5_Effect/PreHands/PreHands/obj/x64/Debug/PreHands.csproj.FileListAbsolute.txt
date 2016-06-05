@@ -61,3 +61,36 @@ C:\Users\Administrator\Desktop\Logos-master (2)\Logos-master\PreHands_PPTF5_Effe
 C:\Users\Administrator\Desktop\Logos-master (2)\Logos-master\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\PreHands.csproj.GenerateResource.Cache
 C:\Users\Administrator\Desktop\Logos-master (2)\Logos-master\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\PreHands.exe
 C:\Users\Administrator\Desktop\Logos-master (2)\Logos-master\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\PreHands.pdb
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\PreHands.exe
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\PreHands.pdb
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\x64\Debug\PreHands.exe
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\x64\Debug\PreHands.pdb
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\x64\Debug\Coding4Fun.Kinect.Wpf.dll
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\x64\Debug\Microsoft.Expression.Drawing.dll
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\x64\Debug\Microsoft.Kinect.dll
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\x64\Debug\Microsoft.Kinect.Toolkit.Controls.dll
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\x64\Debug\Microsoft.Kinect.Toolkit.dll
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\x64\Debug\Microsoft.Kinect.Toolkit.Interaction.dll
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\x64\Debug\Microsoft.Samples.Kinect.WpfViewers.dll
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\x64\Debug\AForge.Video.FFMPEG.dll
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\x64\Debug\AForge.Video.dll
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\x64\Debug\Microsoft.Samples.Kinect.WpfViewers.pdb
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\x64\Debug\Coding4Fun.Kinect.Wpf.pdb
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\x64\Debug\Microsoft.Expression.Drawing.xml
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\x64\Debug\Microsoft.Kinect.xml
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\x64\Debug\AForge.Video.FFMPEG.pdb
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\bin\x64\Debug\AForge.Video.FFMPEG.xml
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\PreHands.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\Common\StandardStyles.baml
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\MainWindow.g.cs
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\SettingsControl.g.cs
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\App.g.cs
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\PreHands_MarkupCompile.cache
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\PreHands_MarkupCompile.lref
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\App.baml
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\MainWindow.baml
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\SettingsControl.baml
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\PreHands.g.resources
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\PreHands.Properties.Resources.resources
+C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\PreHands.csproj.GenerateResource.Cache

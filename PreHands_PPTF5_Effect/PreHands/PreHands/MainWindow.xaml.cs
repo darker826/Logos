@@ -96,7 +96,7 @@ namespace PreHands
             };
             sensor.SkeletonStream.Enable(parameters);
 
-            //          sensor.SkeletonStream.Enable();
+                      sensor.SkeletonStream.Enable();
 
             sensor.AllFramesReady += new EventHandler<AllFramesReadyEventArgs>(sensor_AllFramesReady);
             sensor.DepthStream.Enable(DepthImageFormat.Resolution640x480Fps30);
@@ -359,8 +359,8 @@ namespace PreHands
         {
             //Divide by 2 for width and height so point is right in the middle 
             // instead of in top/left corner
-            Canvas.SetLeft(element, point.X - element.Width / 2);
-            Canvas.SetTop(element, point.Y - element.Height / 2);
+            Canvas.SetLeft(element, point.X - (element.Width / 2));
+            Canvas.SetTop(element, point.Y - (element.Height / 2));
 
         }
 

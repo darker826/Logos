@@ -22,7 +22,6 @@ namespace PreHands.PPT
         static bool startFlag = false;
         static bool endFlag = false;
         private static Timer timer;
-        private static bool tactic = true;
         private static int controlChecker = 0;
 
         public static void startPPTControl(object sender, EventArgs e)
@@ -35,7 +34,7 @@ namespace PreHands.PPT
 
             if (controlChecker == 90)
             {
-                MainWindow.isPPTActive = MainWindow.isPPTActive == true ? false : true;
+                //MainWindow.isPPTActive = MainWindow.isPPTActive == true ? false : true;
                 System.Diagnostics.Debug.WriteLine("active");
             }
 
@@ -52,7 +51,7 @@ namespace PreHands.PPT
 
         private static bool isSlideGestureReady(SkeletonPoint hand, SkeletonPoint shoulder)
         {
-            return (Math.Abs(shoulder.Y - hand.Y) < 0.1 && !(hand.X == shoulder.X)) ? true : false;
+            return (Math.Abs(shoulder.Y - hand.Y) < 0.15 && !(hand.X == shoulder.X)) ? true : false;
         }
 
         private static bool isGestureReady(object sender, EventArgs e)
@@ -77,12 +76,12 @@ namespace PreHands.PPT
             SkeletonPoint compare = eventarg.skeleton.Joints[JointType.HandRight].Position;
             float shoulder = eventarg.skeleton.Joints[JointType.ShoulderRight].Position.Y;
 
-            if (head.Y < compare.Y && shoulder < compare.Y)
+            if (head.Y < compare.Y && head.Z < compare.Z)
             {
                 if (!startFlag)
                 {
-                    SendKeys.SendWait("{F5}");
-                    //System.Diagnostics.Debug.WriteLine("f5");
+                    //SendKeys.SendWait("{F5}");
+                    System.Diagnostics.Debug.WriteLine("f5");
                     startFlag = true;
                 }
             }
@@ -94,7 +93,6 @@ namespace PreHands.PPT
 
         private static void SlideTimer(Object sender, EventArgs eventarg)
         {
-            tactic = true;
             timer.Enabled = false;
         }
 
@@ -109,7 +107,7 @@ namespace PreHands.PPT
 
 
 
-            if (isSlideGestureReady(hand, shoulder) && tactic)
+            if (isSlideGestureReady(hand, shoulder))
             {
                 if (lastHandPoint == null) lastHandPoint = hand;
                 curHandPoint = hand;
@@ -127,20 +125,16 @@ namespace PreHands.PPT
                     rightCount = 0;
                 }
 
-                if (rightCount > 5 && spine.X < curHandPoint.X)
+                if (rightCount > 6 && spine.X < curHandPoint.X)
                 {
                     goNextSlide();
                     rightCount = 0;
-                    //tactic = false;
-                    //timer.Enabled = true;
                 }
 
-                if (leftCount > 5 && spine.X > curHandPoint.X)
+                if (leftCount > 6 && spine.X > curHandPoint.X)
                 {
                     goPreviousSlide();
                     leftCount = 0;
-                    //tactic = false;
-                    //timer.Enabled = true;
                 }
 
                 lastHandPoint = curHandPoint;
@@ -149,14 +143,14 @@ namespace PreHands.PPT
 
         private static void goPreviousSlide()
         {
-            SendKeys.SendWait("{left}");
-            //System.Diagnostics.Debug.WriteLine("left");
+            //SendKeys.SendWait("{left}");
+            System.Diagnostics.Debug.WriteLine("left");
         }
 
         private static void goNextSlide()
         {
-            SendKeys.SendWait("{right}");
-            //System.Diagnostics.Debug.WriteLine("right");
+            //SendKeys.SendWait("{right}");
+            System.Diagnostics.Debug.WriteLine("right");
         }
 
         public static void endPPT(object sender, EventArgs e)
@@ -170,8 +164,8 @@ namespace PreHands.PPT
             {
                 if (!endFlag)
                 {
-                    SendKeys.SendWait("{esc}");
-                    //System.Diagnostics.Debug.WriteLine("esc");
+                    //SendKeys.SendWait("{esc}");
+                    System.Diagnostics.Debug.WriteLine("esc");
                     endFlag = true;
                     //MainWindow.isPPTActive = false;
                 }
