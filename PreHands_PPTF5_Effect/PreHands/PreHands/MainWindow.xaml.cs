@@ -46,7 +46,7 @@ namespace PreHands
         private InteractionStream _interactionStream;
 
         Skeleton_eventHandler eventCreaterPPT = new Skeleton_eventHandler();
-        Skeleton_eventHandler eventChecker = new Skeleton_eventHandler();
+        //Skeleton_eventHandler eventChecker = new Skeleton_eventHandler();
         public static bool isPPTActive = false;
         public static bool isMouseActive = true;
 
@@ -56,7 +56,7 @@ namespace PreHands
 
             if (DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject())) return;
 
-            eventChecker.registEventListener += new Skeleton_eventHandler.customEvent(ppt_eventLists.startPPTControl);
+            //eventChecker.registEventListener += new Skeleton_eventHandler.customEvent(ppt_eventLists.startPPTControl);
             eventCreaterPPT.registEventListener += new Skeleton_eventHandler.customEvent(ppt_eventLists.startPPT);
             eventCreaterPPT.registEventListener += new Skeleton_eventHandler.customEvent(ppt_eventLists.SlideChecker);
             eventCreaterPPT.registEventListener += new Skeleton_eventHandler.customEvent(ppt_eventLists.endPPT);
@@ -260,7 +260,7 @@ namespace PreHands
 
         void checkEvent(Skeleton first)
         {
-            eventChecker.start(new Skeleton_eventArgs(first));
+            //eventChecker.start(new Skeleton_eventArgs(first));
             if (isPPTActive)
             {
                 eventCreaterPPT.start(new Skeleton_eventArgs(first));

@@ -94,3 +94,5 @@ C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj
 C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\PreHands.g.resources
 C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\PreHands.Properties.Resources.resources
 C:\Users\Administrator\Desktop\Logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\PreHands.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\git\logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\PreHands.exe
+C:\Users\Administrator\Desktop\git\logos\PreHands_PPTF5_Effect\PreHands\PreHands\obj\x64\Debug\PreHands.pdb

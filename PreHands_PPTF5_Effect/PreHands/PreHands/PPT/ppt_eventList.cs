@@ -65,7 +65,7 @@ namespace PreHands.PPT
             //System.Diagnostics.Debug.WriteLine("l_shoulder z : " + l_shoulder.Z);
             //System.Diagnostics.Debug.WriteLine("spine z : " + spine.Z);
 
-            return (Math.Abs(r_shoulder.Z - l_shoulder.Z) >= 0.1) ? false : true;
+            return (Math.Abs(r_shoulder.Z - l_shoulder.Z) >= 0.085) ? false : true;
         }
 
         public static void startPPT(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace PreHands.PPT
             {
                 if (!startFlag)
                 {
-                    //SendKeys.SendWait("{F5}");
+                    SendKeys.SendWait("{F5}");
                     System.Diagnostics.Debug.WriteLine("f5");
                     startFlag = true;
                 }
@@ -143,13 +143,13 @@ namespace PreHands.PPT
 
         private static void goPreviousSlide()
         {
-            //SendKeys.SendWait("{left}");
+            SendKeys.SendWait("{left}");
             System.Diagnostics.Debug.WriteLine("left");
         }
 
         private static void goNextSlide()
         {
-            //SendKeys.SendWait("{right}");
+            SendKeys.SendWait("{right}");
             System.Diagnostics.Debug.WriteLine("right");
         }
 
@@ -164,7 +164,7 @@ namespace PreHands.PPT
             {
                 if (!endFlag)
                 {
-                    //SendKeys.SendWait("{esc}");
+                    SendKeys.SendWait("{esc}");
                     System.Diagnostics.Debug.WriteLine("esc");
                     endFlag = true;
                     //MainWindow.isPPTActive = false;

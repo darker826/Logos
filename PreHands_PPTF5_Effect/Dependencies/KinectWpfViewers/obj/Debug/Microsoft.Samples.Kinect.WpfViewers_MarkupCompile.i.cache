@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\Jaeung\Desktop\Logos\PreHands_PPTF5_Effect\Dependencies\KinectWpfViewers\obj\Debug\
+C:\Users\Administrator\Desktop\git\logos\PreHands_PPTF5_Effect\Dependencies\KinectWpfViewers\obj\Debug\
 Microsoft.Samples.Kinect.WpfViewers
 none
 false
@@ -12,8 +12,8 @@ DEBUG;TRACE
 
 7-1694449150
 
-16-1805615984
-20-1232743584
+16-1070180726
+20-1024514735
 KinectSensorChooser.xaml;KinectAudioViewer.xaml;KinectDepthViewer.xaml;KinectColorViewer.xaml;KinectDiagnosticViewer.xaml;KinectSettings.xaml;KinectSkeletonViewer.xaml;
 
 True
