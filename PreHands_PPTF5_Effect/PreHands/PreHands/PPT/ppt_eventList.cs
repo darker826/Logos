@@ -76,7 +76,7 @@ namespace PreHands.PPT
             SkeletonPoint compare = eventarg.skeleton.Joints[JointType.HandRight].Position;
             float shoulder = eventarg.skeleton.Joints[JointType.ShoulderRight].Position.Y;
 
-            if (head.Y < compare.Y && head.Z < compare.Z)
+            if (head.Y <= compare.Y && head.Z < compare.Z)
             {
                 if (!startFlag)
                 {
@@ -131,7 +131,7 @@ namespace PreHands.PPT
                     rightCount = 0;
                 }
 
-                if (leftCount > 6 && spine.X > curHandPoint.X)
+                if (leftCount > 4 && spine.X > curHandPoint.X)
                 {
                     goPreviousSlide();
                     leftCount = 0;

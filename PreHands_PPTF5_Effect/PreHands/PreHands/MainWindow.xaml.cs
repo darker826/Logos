@@ -88,7 +88,7 @@ namespace PreHands
 
             var parameters = new TransformSmoothParameters
             {
-                Smoothing = 0.3f,
+                Smoothing = 0.5f,
                 Correction = 0.0f,
                 Prediction = 0.0f,
                 JitterRadius = 1.0f,
@@ -96,7 +96,7 @@ namespace PreHands
             };
             sensor.SkeletonStream.Enable(parameters);
 
-                      sensor.SkeletonStream.Enable();
+                      //sensor.SkeletonStream.Enable();
 
             sensor.AllFramesReady += new EventHandler<AllFramesReadyEventArgs>(sensor_AllFramesReady);
             sensor.DepthStream.Enable(DepthImageFormat.Resolution640x480Fps30);
@@ -304,7 +304,7 @@ namespace PreHands
                     ColorImageFormat.RgbResolution640x480Fps30);
 
                 //Set location : that handle hand, head image in view
-                CameraPosition(headImage, headColorPoint);
+                //CameraPosition(headImage, headColorPoint);
                 CameraPosition(leftEllipse, leftColorPoint);
                 CameraPosition(rightEllipse, rightColorPoint);
 
@@ -354,7 +354,7 @@ namespace PreHands
                 }
             }
         }
-
+   
         private void CameraPosition(FrameworkElement element, ColorImagePoint point)
         {
             //Divide by 2 for width and height so point is right in the middle 
