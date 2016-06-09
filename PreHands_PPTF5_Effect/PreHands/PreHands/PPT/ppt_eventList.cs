@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.Kinect;
+using PPt = Microsoft.Office.Interop.PowerPoint;
+using System.Runtime.InteropServices;
+
 
 /* @Auther Somin Lee(makersm, sayyo1120@gmail.com)
 *  This is ppt eventlisteners list.
@@ -23,6 +26,99 @@ namespace PreHands.PPT
         static bool endFlag = false;
         private static Timer timer;
         private static int controlChecker = 0;
+        
+        // Define PowerPoint Application object
+        private static PPt.Application pptApplication;
+        // Define Presentation object
+        private static PPt.Presentation presentation;
+        // Define Slide collection
+        private static PPt.Slides slides;
+        private static PPt.Slide slide;
+
+        // Slide count
+        private static int slidescount;
+        // slide index
+        private static int slideIndex;
+
+        public static void PPTSearch()
+        {
+            try
+            {
+                // Get Running PowerPoint Application object
+                pptApplication = Marshal.GetActiveObject("PowerPoint.Application") as PPt.Application;
+
+                // Get PowerPoint application successfully, then set control button enable
+            }
+            catch
+            {
+                MessageBox.Show("Please Run PowerPoint Firstly", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+            if (pptApplication != null)
+            {
+                // Get Presentation Object
+                presentation = pptApplication.ActivePresentation;
+                // Get Slide collection object
+                slides = presentation.Slides;
+                // Get Slide count
+                slidescount = slides.Count;
+                // Get current selected slide 
+                try
+                {
+                    // Get selected slide object in normal view
+                    slide = slides[pptApplication.ActiveWindow.Selection.SlideRange.SlideNumber];
+                }
+                catch
+                {
+                    // Get selected slide object in reading view
+                    slide = pptApplication.SlideShowWindows[1].View.Slide;
+                }
+            }
+        }
+
+        public static void nextPage()
+        {
+            slideIndex = slide.SlideIndex + 1;
+            if (slideIndex > slidescount)
+            {
+                MessageBox.Show("It is already last page");
+            }
+            else
+            {
+                try
+                {
+                    slide = slides[slideIndex];
+                    slides[slideIndex].Select();
+                }
+                catch
+                {
+                    pptApplication.SlideShowWindows[1].View.Next();
+                    slide = pptApplication.SlideShowWindows[1].View.Slide;
+                }
+            }
+        }
+
+        public static void previousPage()
+        {
+            slideIndex = slide.SlideIndex - 1;
+            if (slideIndex >= 1)
+            {
+                try
+                {
+                    slide = slides[slideIndex];
+                    slides[slideIndex].Select();
+                }
+                catch
+                {
+                    pptApplication.SlideShowWindows[1].View.Previous();
+                    slide = pptApplication.SlideShowWindows[1].View.Slide;
+                }
+            }
+            else
+            {
+                MessageBox.Show("It is already Fist Page");
+            }
+        }
+    
 
         public static void startPPTControl(object sender, EventArgs e)
         {
@@ -80,7 +176,9 @@ namespace PreHands.PPT
             {
                 if (!startFlag)
                 {
-                    SendKeys.SendWait("{F5}");
+                    //                    SendKeys.SendWait("{F5}");
+                    PPTSearch();
+                    presentation.SlideShowSettings.Run();
                     System.Diagnostics.Debug.WriteLine("f5");
                     startFlag = true;
                 }
